@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Usuário</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Barra de Navegação -->
+<nav>
+    <div class="container">
+        <h1><a href="index.html">Plataforma de Aprendizagem Online - Saúde</a></h1> 
+    </div>
+</nav>
+
+<!-- Perfil do Usuário -->
+<section id="profile">
+    <div class="container">
+        <h2>Perfil do Usuário</h2>
+        <div class="profile-info">
+            <h3>Informações Pessoais</h3>
+            <form id="edit-profile-form">
+                <div class="form-group">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" value="João Silva">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" value="joao@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="city">Cidade:</label>
+                    <input type="text" id="city" name="city" value="São Paulo">
+                </div>
+                <div class="form-group">
+                    <label for="country">País:</label>
+                    <input type="text" id="country" name="country" value="Brasil">
+                </div>
+                <button type="submit" class="edit-profile-btn">Salvar Alterações</button>
+            </form>
+        </div>
+        <div class="progress">
+            <h3>Progresso nos Cursos</h3>
+            <ul id="course-progress">
+                <li>Curso 1 - <span id="course1-progress">0%</span> completo <button onclick="confirmVideoWatched(1)">Confirmar Assistência</button></li>
+                <li>Curso 2 - <span id="course2-progress">0%</span> completo <button onclick="confirmVideoWatched(2)">Confirmar Assistência</button></li>
+                <li>Curso 3 - <span id="course3-progress">0%</span> completo <button onclick="confirmVideoWatched(3)">Confirmar Assistência</button></li>
+            </ul>
+        </div>
+        <div class="certificate">
+            <h3>Certificado</h3>
+            <p>Clique no link abaixo para baixar seu certificado:</p>
+            <a href="certificado.pdf" download>Download do Certificado</a>
+        </div>
+        <div class="activity">
+            <h3>Histórico de Atividades</h3>
+            <ul>
+                <li>Visualizou Curso: Primeiros Socorros</li>
+                <li>Concluiu Curso: Nutrição Esportiva</li>
+                <li>Comentou no Fórum: Saúde Coletiva</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Rodapé -->
+<footer>
+    <div class="container">
+        <p>&copy; 2024 Plataforma de Aprendizagem Online - Saúde</p>
+    </div>
+</footer>
+
+<!-- Script JavaScript para atualizar a porcentagem de conclusão dos cursos -->
+<script src="script.js"></script>
+
+</body>
+</html>

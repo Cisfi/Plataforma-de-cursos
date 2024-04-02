@@ -1,0 +1,155 @@
+/* Reset de Estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos Gerais */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Barra de Navegação */
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    overflow: hidden; /* Clearfix para evitar que a barra de navegação desmorone */
+}
+
+nav h1 {
+    float: left;
+    margin: 0;
+}
+
+nav ul {
+    float: right;
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav ul li:first-child {
+    margin-left: 0; /* Remove a margem esquerda do primeiro item da lista */
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px; /* Espaçamento interno dos links */
+}
+
+nav ul li a:hover {
+    background-color: #555; /* Cor de fundo quando hover */
+}
+
+/* Cabeçalho */
+header {
+    background-color: #f4f4f4;
+    padding: 50px 0;
+    text-align: center;
+}
+
+/* Seção de Categorias */
+#categorias {
+    padding: 50px 0;
+}
+
+#categorias h3 {
+    margin-bottom: 20px;
+    font-size: 24px; /* Tamanho da fonte */
+    color: #333; /* Cor do texto */
+}
+
+#categorias ul {
+    list-style: none;
+}
+
+#categorias ul li {
+    display: inline;
+    margin-right: 20px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Seção de Cursos */
+#cursos {
+    padding: 50px 0;
+}
+
+.curso {
+    margin-bottom: 30px;
+}
+
+.curso h4 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #333;
+}
+
+.curso p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #666;
+}
+
+.curso button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.curso button:hover {
+    background-color: #555; /* Cor de fundo quando hover */
+}
+
+/* Seção de Cadastro de Usuário */
+#cadastro, #contato, #sobre {
+    padding: 50px 0;
+}
+
+#cadastro form, #contato form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#cadastro label, #contato label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+#cadastro input, #contato input, #contato textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: 1px solid #ccc; /* Adiciona uma borda para destacar os campos */
+}
+
+#cadastro button, #contato button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#cadastro button:hover, #contato button:hover {
+    background-color: #555; /* Cor de fundo quando hover */
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos de Fisioterapia - Plataforma de Aprendizagem Online</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .curso {
+            margin-bottom: 20px;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .confirm-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Barra de Navegação -->
+<nav>
+    <div class="container">
+        <h1><a href="index.html">Plataforma de Aprendizagem Online - Saúde</a></h1> 
+        <ul>
+            <li><a href="fisioterapia.html">Fisioterapia</a></li>
+            <li><a href="Farmacia.html">Farmacia</a></li>
+            <li><a href="Enfermagem.html">Enfermagem</a></li>
+            <li><a href="nutricao.html">Nutrição</a></li>
+            <li><a href="Saude-coletiva.html">Saude-coletiva</a></li>
+            <li><a href="terapia-ocupacional.html">Terapia-ocupacional</a></li>
+            <li><a href="Fonaldiologia.html">Fonaldiologia</a></li>
+            <!-- Adicione mais categorias conforme necessário -->
+            <li><a href="#cursos">Cursos</a></li>
+            <li><a href="#cadastro">Cadastro</a></li>
+            <li><a href="#contato">Contato</a></li>
+            <li><a href="#sobre">Sobre nós</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Cabeçalho -->
+<header>
+    <div class="container">
+        <h2>Cursos de Fisioterapia</h2>
+        <p>Explore nossa seleção de cursos de fisioterapia e aprimore seus conhecimentos nessa área.</p>
+    </div>
+</header>
+
+<!-- Seção de Cursos de Fisioterapia -->
+<section id="cursos-fisioterapia">
+    <div class="container">
+        <h3>Cursos Disponíveis</h3>
+        <div class="curso">
+            <h4>Curso de Reabilitação Musculoesquelética</h4>
+            <p>Descrição do curso...</p>
+            <div class="video-container">
+                <!-- Inclua o vídeo do curso aqui -->
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID_HERE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <button class="confirm-button" onclick="confirmAssistance(1)">Check</button>
+        </div>
+        <div class="curso">
+            <h4>Curso de Fisioterapia Respiratória</h4>
+            <p>Descrição do curso...</p>
+            <div class="video-container">
+                <!-- Inclua o vídeo do curso aqui -->
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID_HERE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <button class="confirm-button" onclick="confirmAssistance(2)">Check</button>
+        </div>
+        <!-- Adicione mais cursos conforme necessário -->
+    </div>
+</section>
+
+<!-- Rodapé -->
+<footer>
+    <div class="container">
+        <p>&copy; 2024 Plataforma de Aprendizagem Online - Saúde</p>
+    </div>
+</footer>
+
+<!-- Script JavaScript para confirmar assistência e atualizar a porcentagem de conclusão do curso -->
+<script>
+    // Função para confirmar assistência ao vídeo
+    function confirmAssistance(courseId) {
+        alert("Você confirmou assistência ao Curso " + courseId);
+        
+        // Aqui você pode adicionar a lógica para atualizar a porcentagem de conclusão do curso no perfil do usuário
+        // Por exemplo, você pode chamar uma função para fazer uma requisição ao servidor e atualizar a porcentagem
+        
+        // Exemplo de atualização fictícia da porcentagem de conclusão do curso
+        updateCourseProgress(courseId, 10); // Aumenta a porcentagem em 10 unidades
+    }
+
+    // Função para atualizar a porcentagem de conclusão do curso no perfil do usuário
+    function updateCourseProgress(courseId, increaseAmount) {
+        // Aqui você pode implementar a lógica para atualizar a porcentagem de conclusão do curso no perfil do usuário
+        // Por exemplo, você pode fazer uma requisição ao servidor para atualizar os dados do usuário
+        // Neste exemplo, estamos apenas mostrando um alerta com a porcentagem atualizada
+        
+        let currentProgress = parseInt(document.getElementById('course' + courseId + '-progress').innerText);
+        let newProgress = currentProgress + increaseAmount;
+        document.getElementById('course' + courseId + '-progress').innerText = newProgress + '%';
+        alert("Porcentagem de conclusão do Curso " + courseId + " atualizada para " + newProgress + "%");
+    }
+</script>
+
+</body>
+</html>
