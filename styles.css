@@ -19,7 +19,7 @@ body {
 
 /* Barra de Navegação */
 nav {
-    background-color: #333;
+    background-color: #555;
     color: #fff;
     padding: 10px 0;
     overflow: hidden; /* Clearfix para evitar que a barra de navegação desmorone */
