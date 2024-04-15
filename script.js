@@ -1,79 +1,65 @@
-// Função para criar um slideshow de imagens
+// Variáveis globais para controle do slideshow
+var currentIndex = 0; // Índice da imagem atual
+var images = document.querySelectorAll('.slideshow-image'); // Lista de imagens do slideshow
+var intervalId; // ID do intervalo para trocar as imagens automaticamente
+
+// Função para iniciar o slideshow
 function startSlideshow() {
-    // Lista de imagens do slideshow
-    var images = document.querySelectorAll('.slideshow-img');
-    var currentImageIndex = 0;
-    var interval = 3000; // Tempo em milissegundos (3 segundos)
-    var isPlaying = true; // Indica se o slideshow está reproduzindo ou pausado
+    // Mostra a primeira imagem
+    showImage(currentIndex);
+    
+    // Inicia o intervalo para trocar as imagens automaticamente
+    intervalId = setInterval(nextImage, 3000);
+}
 
-    // Função para exibir a próxima imagem
-    function showNextImage() {
-        // Esconde a imagem atual
-        images[currentImageIndex].style.display = 'none';
-        // Avança para a próxima imagem
-        currentImageIndex = (currentImageIndex + 1) % images.length;
-        // Exibe a próxima imagem
-        images[currentImageIndex].style.display = 'block';
-    }
+// Função para mostrar uma imagem específica
+function showImage(index) {
+    // Esconde todas as imagens
+    hideAllImages();
+    
+    // Exibe a imagem no índice especificado
+    images[index].style.display = 'block';
+    
+    // Atualiza o índice da imagem atual
+    currentIndex = index;
+}
 
-    // Função para exibir a imagem anterior
-    function showPreviousImage() {
-        // Esconde a imagem atual
-        images[currentImageIndex].style.display = 'none';
-        // Retrocede para a imagem anterior
-        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-        // Exibe a imagem anterior
-        images[currentImageIndex].style.display = 'block';
-    }
-
-    // Função para pausar o slideshow
-    function pauseSlideshow() {
-        isPlaying = false;
-    }
-
-    // Função para reproduzir o slideshow
-    function playSlideshow() {
-        isPlaying = true;
-    }
-
-    // Exibe a primeira imagem
-    images[currentImageIndex].style.display = 'block';
-
-    // Define o intervalo para mudar as imagens
-    var slideshowInterval = setInterval(function() {
-        if (isPlaying) {
-            showNextImage();
-        }
-    }, interval);
-
-    // Event listener para pausar o slideshow ao clicar em um botão
-    document.getElementById('pauseButton').addEventListener('click', pauseSlideshow);
-
-    // Event listener para reproduzir o slideshow ao clicar em um botão
-    document.getElementById('playButton').addEventListener('click', playSlideshow);
-
-    // Event listener para avançar para a próxima imagem ao clicar em um botão
-    document.getElementById('nextButton').addEventListener('click', function() {
-        showNextImage();
-    });
-
-    // Event listener para retroceder para a imagem anterior ao clicar em um botão
-    document.getElementById('prevButton').addEventListener('click', function() {
-        showPreviousImage();
+// Função para esconder todas as imagens
+function hideAllImages() {
+    images.forEach(function(image) {
+        image.style.display = 'none';
     });
 }
 
-// Função para outras funcionalidades
-function otherFunctionalities() {
-    // Aqui você pode adicionar outras funcionalidades JavaScript
-    // Esta função será chamada quando a página for carregada
+// Função para avançar para a próxima imagem
+function nextImage() {
+    // Incrementa o índice e mostra a próxima imagem
+    showImage((currentIndex + 1) % images.length);
 }
 
-// Função principal para inicializar as funcionalidades
-function initialize() {
-    startSlideshow(); // Inicia o slideshow
-    otherFunctionalities(); // Inicia outras funcionalidades
+// Função para retroceder para a imagem anterior
+function prevImage() {
+    // Calcula o índice anterior e mostra a imagem
+    var prevIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(prevIndex);
 }
 
-// Chama a função initialize quando o DOM estiver pronto
-document.addEventListener('DOMContentLoaded', initialize);
+// Função para pausar o slideshow
+function pauseSlideshow() {
+    clearInterval(intervalId); // Limpa o intervalo para pausar
+}
+
+// Função para continuar o slideshow
+function continueSlideshow() {
+    // Reinicia o intervalo para continuar
+    intervalId = setInterval(nextImage, 3000);
+}
+
+// Associando eventos aos botões
+document.getElementById('prevButton').addEventListener('click', prevImage);
+document.getElementById('nextButton').addEventListener('click', nextImage);
+document.getElementById('pauseButton').addEventListener('click', pauseSlideshow);
+document.getElementById('continueButton').addEventListener('click', continueSlideshow);
+
+// Iniciar o slideshow quando a página carregar
+window.onload = startSlideshow;
