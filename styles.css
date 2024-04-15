@@ -1,0 +1,129 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configurações básicas do corpo */
+body {
+    font-size: 16px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    background-color: #2ecc71;
+    line-height: 1.6;
+}
+
+/* Layout do cabeçalho */
+header {
+    background-color: #888888;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Layout do menu */
+#area-menu {
+    display: flex;
+}
+
+#area-menu a {
+    text-decoration: none;
+    color: #fff;
+    padding: 8px 20px;
+    transition: background-color 0.3s ease;
+}
+
+#area-menu a:hover {
+    background-color: #696969;
+}
+
+/* Conteúdo principal */
+#main-content {
+    background-color: #ecf0f1;
+    max-width: 920px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* Rodapé */
+footer {
+    background-color: #2ecc71;
+    padding: 15px;
+    text-align: center;
+}
+
+/* Estilos para títulos */
+h1, h2 {
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 28px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+/* Estilos para imagens */
+img {
+    max-width: 50%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Definir resoluções diferentes para imagens */
+#imagem-grande {
+    max-width: 50%;
+    height: auto;
+}
+
+.small-images img {
+    max-width: 50%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Balões de informações */
+.balloon {
+    background-color: #fff;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estatísticas */
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.stats div {
+    flex: 1;
+    text-align: center;
+}
+
+.stats p {
+    margin-bottom: 10px;
+}
+
+/* Feedbacks */
+.feedback {
+    display: flex;
+    justify-content: space-between;
+}
+
+.feedback .balloon {
+    flex: 1;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.feedback .balloon p {
+    margin-bottom: 5px;
+}
