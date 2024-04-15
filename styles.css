@@ -1,127 +1,142 @@
-/* Reset CSS */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Configurações básicas do corpo */
 body {
-    font-size: 16px;
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
-    background-color: #FFF;
-    line-height: 1.6;
+    font-size: 1em;
+    font-family: "Trebuchet MS", helvetica, sans-serif;
+    background: #f0f0f0; /* Fundo cinza claro */
+    padding-top: 20px; /* Espaçamento em cima */
 }
 
-/* Layout do cabeçalho */
+/* Layout */
+
 header {
     background-color: #888888;
     padding: 15px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 }
 
-/* Layout do menu */
+header img {
+    max-width: 100%; /* Ajusta a largura máxima do logo */
+    height: auto;
+}
+
 #area-menu {
-    display: flex;
+    padding: 10px;
 }
 
+#main-content {
+    background-color: #d3d3d3; /* Fundo cinza */
+    width: 920px;
+    margin: 20px auto; /* Espaçamento em cima e embaixo */
+    padding: 20px;
+    border-radius: 10px; /* Cantos arredondados */
+}
+
+footer {
+    background: #888888; /* Cor do cabeçalho do rodapé */
+    padding: 15px;
+    text-align: center;
+    margin-top: 20px; /* Espaçamento em cima */
+    border-radius: 10px; /* Cantos arredondados */
+}
+
+/* Formatações do menu */
 #area-menu a {
     text-decoration: none;
-    color: #fff;
+    color: #FFF;
     padding: 8px 20px;
     transition: background-color 0.3s ease;
+    border-radius: 5px; /* Cantos arredondados */
 }
 
 #area-menu a:hover {
-    background-color: #696969;
+    background: #696969;
 }
 
-/* Conteúdo principal */
-#main-content {
-    background-color: #ecf0f1;
-    max-width: 920px;
-    margin: 20px auto;
-    padding: 20px;
-}
-
-/* Rodapé */
-footer {
-    background-color: #2ecc71;
-    padding: 15px;
-    text-align: center;
-}
-
-/* Estilos para títulos */
-h1, h2 {
-    margin-bottom: 10px;
-}
-
+/* Formatações gerais */
 h1 {
-    font-size: 15px;
+    font-size: 1.5em;
 }
 
 h2 {
-    font-size: 20px;
+    font-size: 0.5em;
 }
 
-/* Estilos para imagens */
-img {
-    max-width: 50%;
-    height: auto;
-    margin-bottom: 10px;
+/* Slideshow */
+.slideshow {
+    position: relative;
+    width: 300px; /* Largura do slideshow */
+    height: 100px; /* Altura do slideshow */
+    overflow: hidden; /* Oculta imagens fora da área do slideshow */
+    border-radius: 10px; /* Cantos arredondados */
 }
 
-/* Definir resoluções diferentes para imagens */
+.slideshow-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Redimensiona a imagem para preencher a área */
+}
+
+/* Esconde todas as imagens do slideshow, exceto a primeira */
+.slideshow-image:not(:first-child) {
+    display: none;
+}
+
 #imagem-grande {
-    max-width: 50%;
+    width: 100%;
     height: auto;
+    border-radius: 10px; /* Cantos arredondados */
+    margin-bottom: 20px;
 }
 
-.small-images img {
-    max-width: 50%;
-    height: auto;
-    margin-bottom: 10px;
+.small-images {
+    display: none; /* Oculta as imagens pequenas por padrão */
 }
 
-/* Balões de informações */
+/* Balão */
 .balloon {
-    background-color: #fff;
+    background-color: #f0f0f0;
     padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    border-radius: 10px; /* Cantos arredondados */
 }
 
 /* Estatísticas */
 .stats {
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
 }
 
 .stats div {
-    flex: 1;
+    flex-basis: 30%;
     text-align: center;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 10px; /* Cantos arredondados */
 }
 
-.stats p {
-    margin-bottom: 10px;
-}
-
-/* Feedbacks */
+/* Feedback */
 .feedback {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .feedback .balloon {
-    flex: 1;
-    background-color: #fff;
+    background-color: #f0f0f0;
     padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-basis: 30%;
+    border-radius: 10px; /* Cantos arredondados */
 }
 
 .feedback .balloon p {
